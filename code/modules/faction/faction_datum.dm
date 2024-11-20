@@ -49,6 +49,7 @@
 /datum/faction/syndicate/hardliners
 	name = FACTION_HARDLINERS
 	prefixes = PREFIX_HARDLINERS
+	check_prefix = FALSE
 
 /datum/faction/syndicate/suns
 	name = FACTION_SUNS
@@ -97,7 +98,7 @@
 	name = FACTION_FRONTIERSMEN
 	prefixes = PREFIX_FRONTIERSMEN
 	color = "#80735D"
-	check_prefix = TRUE
+	check_prefix = FALSE
 
 /datum/faction/pgf
 	name = FACTION_PGF
