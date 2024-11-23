@@ -1706,7 +1706,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("flavor_text")
 					var/msg = stripped_multiline_input(usr, "A snippet of text shown when others examine you, describing what you may look like. This can also be used for OOC notes.", "Flavor Text", html_decode(features["flavor_text"]), MAX_FLAVOR_LEN, TRUE)
-					if(msg) //WS edit - "Cancel" does not clear flavor text
+					if(msg)
 						features["flavor_text"] = msg
 
 				if("hair")
@@ -2485,7 +2485,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	character.fbp = fbp
 
-	character.flavor_text = features["flavor_text"] //Let's update their flavor_text at least initially
+	character.set_flavor_text(features["flavor_text"]) //Let's update their flavor_text at least initially
 
 	if(loadout) //I have been told not to do this because it's too taxing on performance, but hey, I did it anyways! //I hate you old me //don't be mean
 		for(var/gear in equipped_gear)
