@@ -924,6 +924,7 @@
 				H.reagents.add_reagent(/datum/reagent/hydrogen, (hydrogen-base))
 				return TRUE
 	return
+
 /datum/reagent/fuel
 	name = "Welding fuel"
 	description = "Required for welders. Flammable."
