@@ -1159,11 +1159,6 @@
 		update_inv_gloves()
 		. = TRUE
 
-/mob/living/carbon/proc/update_flavor_text_feature(new_text)
-	if(!dna)
-		return
-	dna.features["flavor_text"] = new_text
-
 /// Returns whether or not the carbon should be able to be shocked
 /mob/living/carbon/proc/should_electrocute(power_source)
 	if (ismecha(loc))
@@ -1213,19 +1208,19 @@
 	else
 		set_lying_angle(new_lying_angle)
 
-/mob/living/carbon/proc/set_flavor_text(new_text)
+/mob/living/carbon/proc/set_flavor_text(new_text, new_portrait, new_source)
 	if(!new_text)
 		return
-	if(new_text == flavor_text)
-		return
 
-	AddComponent(/datum/component/flavor_text, new_text, "https://i.imgur.com/weRxaGd.png", "honkbird")
+	AddComponent(/datum/component/flavor_text, new_text, new_portrait, new_source)
 
 	flavor_text_html = parsemarkdown_basic(new_text)
 	flavor_text = new_text
 
 	if(dna)
 		dna.features["flavor_text"] = flavor_text
+		dna.features["flavor_portrait"] = new_portrait
+		dna.features["flavor_source"] = new_source
 
 /mob/living/carbon/verb/change_flavor_text()
 	set name = "Change Flavor Text"
