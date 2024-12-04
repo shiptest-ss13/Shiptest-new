@@ -1219,6 +1219,8 @@
 	if(new_text == flavor_text)
 		return
 
+	AddComponent(/datum/component/flavor_text, new_text, "https://i.imgur.com/weRxaGd.png", "honkbird")
+
 	flavor_text_html = parsemarkdown_basic(new_text)
 	flavor_text = new_text
 
